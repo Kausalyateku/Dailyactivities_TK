@@ -1,0 +1,80 @@
+07/08/2023   Daily Activity -3
+
+1. READ the .txt file, html file,json files using Nodejs
+
+
+Program -1: With .txt File
+
+FILENODE.JS : 
+
+const fs = require("fs");
+
+fs.readFile("FILE1.txt", function (err,data) {
+
+   if (err)  return console.error(err);
+   
+  console.log(data.toString());
+  
+});
+
+ console.log("Program Finished");
+
+FILE1.TXT:
+
+I am from notepad
+
+Program -2 : With HTML File
+
+FILENODE.JS : 
+
+const fs = require("fs");
+
+fs.readFile("FILE2.html", function (err,data) {
+
+   if (err)  return console.error(err);
+   
+  console.log(data.toString());
+  
+});
+
+ console.log("Program finished");
+
+FILE2.html:
+
+<html lang="en">
+
+
+<head>
+    <title>Html file</title>
+</head>
+
+
+<body>
+     <h1>Hello, i am from html file</h1>
+</body>
+
+</html>
+
+Program -3: JSON file
+
+FILENODE.js:
+
+const fs = require("fs");
+
+fs.readFile("FILE3.json", function (err,data) {
+
+   if (err)  return console.error(err);
+   
+  console.log(data.toString());
+  
+});
+
+ console.log("Program ended");
+
+FILE3.json:
+
+[{"name":"Ravi","age":24,"Occupation":["Engineer"]},
+{"name":"Anita","age":26,"Occupation":["Florist"]}]
+
+
+2.TRY ME PUBSUB CLOUD completed
