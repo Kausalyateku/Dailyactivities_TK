@@ -1,0 +1,121 @@
+DATE: 04/08/2023
+
+1. Refer FB + LinkedIn API's :: Try some of the API's in Postman
+
+
+Postman: Postman is a popular collaboration platform and an API development tool used by developers to simplify and streamline the process of working with APIs (Application Programming Interfaces). It provides a user-friendly interface that allows developers to create, test, and manage APIs effectively. 
+
+Facebook:
+
+Some API's of Facebook:
+
+1.Facebook Graph API
+2.Facebook Marketing API
+3.Facebook Login API
+4.Facebook Messenger API
+5.Instagram Graph API
+
+
+A) Which API's referred?
+--Graph Api and Login Api
+
+B) What did you understand from the API's?
+--From my understanding, the Facebook Graph API allows access to user profiles, posts, photos, pages, and other related data. By using postman i created a page in my facebook account and using postman i tired to post some text ,images and videos. By using postman i also learned about deleting and getting the information about the posts that i posted using Facebook Graph API.
+
+And for Facebook login APi enables users to log in to third-party applications using their Facebook credentials, simplifying the sign-up and login process while maintaining user security and privacy.For this i used a wattpad account to login as facebook user
+
+C) What are the parameters + endpoints
+
+It depend on the specific operation you want to perform
+
+-- In Facebook Graph Api: 
+    --> to retrieve the currently authenticated user's profile information - /me
+    --> /{page-id}: This endpoint allows you to retrieve information about a specific   Facebook page using its page ID.
+    -->/{page-id}/posts: Use this endpoint to get the posts made by a specific Facebook page.
+    -->/{user-id}/photos: Retrieve the photos uploaded by a specific user.
+
+Parameters for this facebook Api is related to operations like :
+    ->Access Token
+    -> Fields
+
+-- In Facebook Login Api:
+    For this Facebook login , developers need to request an access token from Facebook, which allows them to retrieve user information and verify the user's identity.
+
+    --->vX.X/dialog/oauth: This endpoint initiates the OAuth 2.0 flow and redirects the user to the Facebook Login dialog for authentication. The "X.X" in the URL represents the API version.
+
+    --->/vX.X/oauth/access_token: After successful authentication, this endpoint is used to exchange the authorization code for an access token, which grants access to the user's Facebook data.
+    --->/vX.X/me: Once you have an access token, this endpoint allows you to retrieve the currently authenticated user's profile information, including their Facebook ID, name, email, and more.
+    --->/vX.X/debug_token: This endpoint allows you to verify and debug an access token, ensuring its validity and authenticity
+
+Parameters for this facebook login Api is related to operations :
+    ->Access Token
+    -> Fields
+
+
+D) What are the business utlities of the API's
+
+  The business utilities of the Facebook Graph API are vast. Companies can use it to integrate Facebook data into their applications, analyze user interactions, manage Facebook pages, track engagement metrics, and implement social media marketing strategies, among other things. It enables businesses to better understand their audience and enhance their social media presence.
+
+ The business utilities of the Facebook Login API are significant. By implementing this API, businesses can provide a seamless and quick login experience for their users, reducing the friction of creating new accounts or remembering separate login credentials. This can lead to increased user engagement.
+
+LinkedIn :
+
+Some API's of LinkedIn :
+
+1.LinkedIn Marketing Developer Platform
+2.LinkedIn OAuth 2.0 API
+3.LinkedIn Share API
+4.LinkedIn Job Search API
+5.LinkedIn Talent Solutions API
+
+A) Which API's referred?
+   LinkedIn Share API
+
+B) What did you understand from the API?
+
+   From my understanding, the LinkedIn Share API enables developers to allow users to share content, such as articles, blog posts, or website URLs, directly to their LinkedIn profiles or LinkedIn company pages from within the developer's application or website.
+
+C) What are the parameters + endpoints
+
+  As per LinkedIn share Api i have seen only one endpoint that is  POST /v2/ugcPosts. To use this endpoint, we need to make an HTTP POST request with the appropriate parameters and content in the request body. The content we share can include text, images, videos, and other media types. 
+ As for the parameters to share api :
+  --> Content
+  --> Visibility
+  -->Text
+  -->Share MediaCategory
+  --> Distribution
+
+D) What are the business utlities of the API's
+
+  The business utilities of the LinkedIn Share API are significant for businesses and content publishers. By integrating this API, businesses can encourage their users to share their content on LinkedIn, increasing the visibility and reach of their posts. This can help drive more traffic to their websites or content and potentially attract new leads or customers. And sharing content on LinkedIn can also help with brand exposure and credibility, as it reaches a professional audience and can be seen by other professionals in the industry.
+
+4. DB Schema --> Structure of the tables 
+
+Database schema is a logical and structural representation of the organization and design of a database. It defines the structure of the database, including tables, fields, relationships, constraints, and other database objects. The schema provides a blueprint for organizing and storing data in a structured and efficient manner.
+
+Structure of the tables:
+ The structure of tables in a database schema defines how data is organized and stored within the database. Each table represents an entity and contains rows (records) and columns (fields) that define the attributes and values of the data.
+     The combination of tables, columns, primary keys, foreign keys, constraints, and other elements defines the structure of the database schema. A well-designed and organized database schema is essential for efficient data storage, retrieval, and management within the database system.
+
+
+6. What is an endpoint(Queue endpoint + topic endpoint)
+
+Queue Endpoint:
+A queue endpoint refers to the destination where messages are sent and stored in a message queue. It acts as a buffer that holds messages until they are processed by the consumers or subscribers. Messages are typically sent to the queue by producers or publishers and are consumed by one or more consumers or subscribers. The queue ensures reliable and ordered delivery of messages to the consumers, and it helps decouple the producers from the consumers, making the system more scalable and resilient.
+
+Topic Endpoint:
+A topic endpoint is similar to a queue endpoint, but it is used in the context of a publish-subscribe pattern. In this pattern, messages are published to a topic, and multiple subscribers can receive those messages. Subscribers express interest in specific topics, and they receive messages published to those topics. This enables one-to-many communication, where a single message can be sent to multiple subscribers interested in the topic. Topics are useful for broadcasting information or events to multiple consumers without the need for direct one-to-one communication.
+
+in the context of Solace messaging, Queue endpoints are used for point-to-point communication, where messages are sent to and consumed by a single consumer, while Topic endpoints are used for publish-subscribe communication, allowing multiple subscribers to receive messages published to specific topics. These patterns enable efficient and flexible message routing in various messaging scenarios, supporting the needs of different applications and use cases.
+
+7.What is High Availability Architecture? what happens in High Availability Architecture
+  
+High Availability (HA) Architecture in Solace is a design approach that aims to ensure continuous and reliable message delivery in the event of hardware or software failures. It provides redundancy and fault-tolerance for  message brokers, ensuring that critical messaging services remain available even during unexpected disruptions.
+
+In a High Availability Architecture in Solace, multiple Solace message brokers are deployed in a cluster to create a highly available messaging environment. It provides a robust and fault-tolerant messaging infrastructure. It ensures that messaging services are available and reliable, and it can handle hardware failures, network issues, or other disruptions without affecting message delivery
+
+
+9. Create a new Solace free a/c --> Create a new EBS service :: Deploy it in AWS --> Ohio region + Custom name for Message-VPN and Cluster (COMPLETED)
+
+
+
