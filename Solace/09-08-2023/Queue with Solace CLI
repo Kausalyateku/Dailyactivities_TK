@@ -1,0 +1,91 @@
+//Create a queue using Solace CLI
+
+
+developer-production-l8qbibk6x7a-solace-primary-0> enable
+developer-production-l8qbibk6x7a-solace-primary-0# configure
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# show queue *
+
+
+Flags Legend:
+I - Ingress Admin State (U=Up, D=Down)
+E - Egress  Admin State (U=Up, D=Down)
+A - Access-Type         (E=Exclusive, N=Non-Exclusive)
+S - Selector            (Y=Yes, N=No)
+D - Durability          (D=Durable, N=Non-Durable)
+P - Priority            (Y=Yes, N=No)
+
+Queue Name                     Messages      Spool             Bind Status
+Message VPN                     Spooled  Usage(MB)   HWM (MB) Count I E A S D P
+--------------------------- ----------- ---------- ---------- ----- -----------
+AQ
+mytestservice01                       0       0.00       0.00     0 U U E N D N
+
+LQ
+mytestservice01                       2       0.00       0.00     0 U U E N D N
+
+LQ01
+mytestservice01                       4       0.00       0.00     0 U U E N D N
+
+queue20
+---Press any key to continue, or `q' to quit---
+Command aborted.
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# message-spool message-vpn my testservice01
+
+ Invalid command input
+        message-spool message-vpn my testservice01
+                                     ^
+         -> invalid parameter
+
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# message-spool message-vpn mytestservice01
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool)# create queue queue200
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue)# max-spool-usage 70
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue)# permission all consume
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue)# no shut
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue)# show queue queue200
+
+Flags Legend:
+I - Ingress Admin State (U=Up, D=Down)
+E - Egress  Admin State (U=Up, D=Down)
+A - Access-Type         (E=Exclusive, N=Non-Exclusive)
+S - Selector            (Y=Yes, N=No)
+D - Durability          (D=Durable, N=Non-Durable)
+P - Priority            (Y=Yes, N=No)
+
+Queue Name                     Messages      Spool             Bind Status
+Message VPN                     Spooled  Usage(MB)   HWM (MB) Count I E A S D P
+--------------------------- ----------- ---------- ---------- ----- -----------
+queue200
+mytestservice01                       0       0.00       0.00     0 U U E N D N
+
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue)# show queue queue200 details
+
+ Invalid command input
+        show queue queue200 details
+                            ^
+         -> invalid parameter
+ Expected one of the following:
+      message-vpn
+        flows                                   - Show flows
+        stats                                   - Show queue statistics
+        messages                                - Show message spool messages
+        subscriptions                           - Show subscriptions
+                                                  associated with the Queue
+        rates                                   - Show rates associated with
+                                                  the Queue
+        sort-by-messages-spooled                - Sort the output in
+                                                  descending order of number
+                                                  of messages spooled
+        sort-by-unacked-messages-spooled        - Sort the output in
+                                                  descending order of number
+                                                  of unacked messages spooled
+      dead-message-queue
+        replay                                  - Show replay log information
+        partitions                              - Show partitions associated
+                                                  with the Queue
+        durable                                 - Show durable queues only
+        non-durable                             - Show non-durable queues only
+        detail                                  - Show detailed information
+        replay-state                            - filter on replay states
+        count
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue)# subscription topic LOGIC200
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue)# home
