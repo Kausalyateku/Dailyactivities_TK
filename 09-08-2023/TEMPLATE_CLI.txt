@@ -1,0 +1,82 @@
+developer-production-l8qbibk6x7a-solace-primary-0> enable
+developer-production-l8qbibk6x7a-solace-primary-0# configure
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# message-spool message-vpn mytestservice01
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool)# create queue-template QTemp02
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# show queue-template *
+Message VPN                      Queue Template                   Name Filter
+-------------------------------- -------------------------------- -----------
+mytestservice01                  QTemp01                          amazon/prod
+                                                                    uct/price
+                                                                    /*
+mytestservice01                  QTemp02
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# show queue-template QTemp02 detail
+Name                                  : QTemp02
+Message VPN                           : mytestservice01
+Name Filter                           :
+Durability Override                   : none
+Access Type                           : Exclusive
+All Others Permission                 : No-Access (0000)
+Quota (MB)                            : 5000
+Respect Message Priority              : No
+Respect TTL                           : No
+Max TTL (Seconds)                     : 0 (Disabled)
+Reject Msg to Sender on Discard       : Yes
+  Including When Shutdown             : No
+Max Delivered Unacked Msgs Per Flow   : 10000
+Redelivery                            : Enabled
+  Max Redelivery                      : 0
+  Redelivery Delay                    : Disabled
+    Multiplier                        : 2.00
+    Initial Interval (ms)             : 1000
+    Max Interval (ms)                 : 64000
+Delivery Delay (Seconds)              : 0
+Consumer Ack Propagation              : Yes
+Reject Low-Priority-Msg               : No
+Reject Low-Priority-Msg Limit         : 0
+---Press any key to continue, or `q' to quit---
+Command aborted.
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# name-filter Animals/wild/*
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# max-spool-usage 70
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# permission all consume
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# permission all modify-topic
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# durability-override [none | Non-Durable]
+
+ Invalid command input
+        durability-override [none | Non-Durable]
+                            ^
+         -> invalid parameter
+ Expected one of the following:
+      none         - The durability of the endpoint will be as requested on
+                     create.
+      non-durable  - The durability of the created queue will be non-durable,
+                     regardless of what was requested.
+
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# durability-override non-durable
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# access-type non-exclusive
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# access-type exclusive
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# no consumer-ack-propagation
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# show queue-template QTemp02 detail
+Name                                  : QTemp02
+Message VPN                           : mytestservice01
+Name Filter                           : Animals/wild/*
+Durability Override                   : non-durable
+Access Type                           : Exclusive
+All Others Permission                 : Modify-Topic (1110)
+Quota (MB)                            : 70
+Respect Message Priority              : No
+Respect TTL                           : No
+Max TTL (Seconds)                     : 0 (Disabled)
+Reject Msg to Sender on Discard       : Yes
+  Including When Shutdown             : No
+Max Delivered Unacked Msgs Per Flow   : 10000
+Redelivery                            : Enabled
+  Max Redelivery                      : 0
+  Redelivery Delay                    : Disabled
+    Multiplier                        : 2.00
+    Initial Interval (ms)             : 1000
+    Max Interval (ms)                 : 64000
+Delivery Delay (Seconds)              : 0
+Consumer Ack Propagation              : No
+Reject Low-Priority-Msg               : No
+Reject Low-Priority-Msg Limit         : 0
+---Press any key to continue, or `q' to quit---
