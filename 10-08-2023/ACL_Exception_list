@@ -1,0 +1,13 @@
+developer-production-l8qbibk6x7a-solace-primary-0> enable
+developer-production-l8qbibk6x7a-solace-primary-0# configure
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# acl-profile acp20  message-vpn mytestservice01
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile)# publish-topic
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/publish-topic)# exceptions list animals/domestic/cats
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/publish-topic)# exceptions MQTT list animals/domestic/cats
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/publish-topic)# exceptions SMF list animals/domestic/cats
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/publish-topic)# exit
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile) # subscribe-topic
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/subscribe-topic)# exceptions MQTT list animals/domestic/>
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/subscribe-topic)# exceptions SMF list animals/domestic/>
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/subscribe-topic)# exceptions MQTT list animals/domestic/*
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/subscribe-topic)# exceptions SMF list animals/domestic/* 
