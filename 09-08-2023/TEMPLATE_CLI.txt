@@ -39,22 +39,11 @@ developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-
 developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# max-spool-usage 70
 developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# permission all consume
 developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# permission all modify-topic
-developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# durability-override [none | Non-Durable]
-
- Invalid command input
-        durability-override [none | Non-Durable]
-                            ^
-         -> invalid parameter
- Expected one of the following:
-      none         - The durability of the endpoint will be as requested on
-                     create.
-      non-durable  - The durability of the created queue will be non-durable,
-                     regardless of what was requested.
-
 developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# durability-override non-durable
 developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# access-type non-exclusive
 developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# access-type exclusive
 developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# no consumer-ack-propagation
+developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# consumer-ack-propagation
 developer-production-l8qbibk6x7a-solace-primary-0(configure/message-spool/queue-template)# show queue-template QTemp02 detail
 Name                                  : QTemp02
 Message VPN                           : mytestservice01
