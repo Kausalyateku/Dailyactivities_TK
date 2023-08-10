@@ -1,0 +1,56 @@
+//create and configure client-usernames
+
+developer-production-l8qbibk6x7a-solace-primary-0> enable
+developer-production-l8qbibk6x7a-solace-primary-0# configure
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# create client-user                                                                                                             name cu100 messge-vpn mytestservice01
+
+ Invalid command input
+        create client-username cu100 messge-vpn mytestservice01
+                                     ^
+         -> invalid parameter
+ Expected one of the following:
+      message-vpn
+
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# create client-user                                                                                                             name cu100 message-vpn mytestservice01
+ERROR:  Cannot create client-username 'cu100': already exists
+Command Failed
+
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# create client-user                                                                                                             name cu200 message-vpn mytestservice01
+developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)#  c                                                                                                             lient-username cu200 message-vpn mytestservice01
+
+ Invalid command input
+        client-username cu200 message-vpn mytestservice01
+        ^
+         -> unknown command, or command not available in current mode
+developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# ex                                                                                                             it
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# client-username cu                                                                                                             200 message-vpn mytestservice01
+developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# ac                                                                                                             l-profile default
+developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# cl                                                                                                             ient-profile default
+developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# sh                                                                                                             ow client-username *
+
+Total Client Usernames  :    11 of 1018
+  Configured            :    11
+  Dynamic               :     0
+
+Username                           Message VPN                 Enabled # Clients
+---------------------------------- --------------------------- ------- ---------
+#client-username                   mytestservice01                 Yes         1
+cu100                              mytestservice01                  No         0
+cu200                              mytestservice01                  No         0
+default                            mytestservice01                  No         0
+solace-cloud-client                mytestservice01                 Yes         0
+
+developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# no                                                                                                              shutdown
+developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# sh                                                                                                             ow client-username *
+
+Total Client Usernames  :    11 of 1018
+  Configured            :    11
+  Dynamic               :     0
+
+Username                           Message VPN                 Enabled # Clients
+---------------------------------- --------------------------- ------- ---------
+#client-username                   mytestservice01                 Yes         1
+cu100                              mytestservice01                  No         0
+cu200                              mytestservice01                 Yes         0
+default                            mytestservice01                  No         0
+solace-cloud-client                mytestservice01                 Yes         0
