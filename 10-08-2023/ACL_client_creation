@@ -1,0 +1,36 @@
+developer-production-l8qbibk6x7a-solace-primary-0> enable
+developer-production-l8qbibk6x7a-solace-primary-0# configure
+developer-productionl8qbibk6x7a-solace-primary-0(configure)# create acl-profile acp20 message-vpn mytestservice01
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile)# exit
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# acl-profile acp20 message-vpn mytestservice01
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile)# client-connect
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/client-connect)# default-action allow
+developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)#
+ Inactivity timeout expired. Closing session....
+login as: mytestservice01-admin
+Pre-authentication banner message from server:
+| Solace PubSub+ Enterprise
+End of banner message from server
+Keyboard-interactive authentication prompts from server:
+| Password:
+End of keyboard-interactive prompts from server
+
+Solace PubSub+ Enterprise Version 10.4.1.59
+
+This Solace product is proprietary software of
+Solace Corporation. By accessing this Solace product
+you are agreeing to the license terms and conditions
+located at http://www.solace.com/license-software
+
+Copyright 2004-2023 Solace Corporation. All rights reserved.
+
+Operating Mode: Message Routing Node
+
+developer-production-l8qbibk6x7a-solace-primary-0> enable
+developer-production-l8qbibk6x7a-solace-primary-0# configure
+developer-production-l8qbibk6x7a-solace-primary-0(configure)# acl-profile acp20  message-vpn mytestservice01
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile)# publish-topic
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/publish-topic)# default-action allow
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/ publish-topic)# exit
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile) # subscribe-topic
+developer-production-l8qbibk6x7a-solace-primary-0(configure/acl-profile/subscribe-topic)# default-action allow
