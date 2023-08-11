@@ -26,6 +26,7 @@ developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# ex
 developer-production-l8qbibk6x7a-solace-primary-0(configure)# client-username cu200 message-vpn mytestservice01
 developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# acl-profile default
 developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# client-profile default
+developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# guaranteed-endpoint-permission-override
 developer-production-l8qbibk6x7a-solace-primary-0(configure/client-username)# show client-username *
 
 Total Client Usernames  :    11 of 1018
