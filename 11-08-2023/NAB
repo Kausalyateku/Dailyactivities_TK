@@ -1,0 +1,52 @@
+///NAB(Network Acceleration Blade)
+
+A Solace PubSub+ appliance relies on several interfaces and internal routing components to enable the transfer of data between the appliance and either management applications that connect to the appliance’s management interfaces or client applications that connect to the appliance's Network Acceleration Blade (NAB) interfaces. 
+
+
+Replacing an Existing NAB with a NAB with Fewer Ports
+You can replace one model of NAB with another model NAB that has fewer Ethernet ports.
+
+Step 1: Back Up Current Configuration
+Before making any configuration changes, back up the current event broker configuration.
+
+
+solace1> enable
+solace1# copy current-config pre-nab-upgrade-backup-file
+solace1# exit
+solace1> show current-config all > pre-nab-upgrade-config
+
+Step 2: Make Required Configuration Changes
+If you switch to a NAB with less ports, the following configuration changes are required:
+LAG Configuration
+Bridge Configuration
+Replication Configuration
+Message Backbone VRF Configuration
+IP Interface Configuration
+Routing Interface Configuration
+
+Step 3: Reload Event Broker Configuration
+After making the necessary configuration changes, reload the event broker configuration:
+
+solace# reload
+This command causes a reload of the system
+Do you want to continue (y/n)? y
+
+Step 4: Backup Event Broker Configuration
+solace# copy current-config nab-upgrade-ready-backup-file
+solace# show current-config all > nab-upgrade-ready-config
+
+Step 5: Power Down Appliance
+solace# power-down
+This command powers off the appliance and does not restart it afterwards
+Do you want to continue (y/n)? y
+
+Step 6: Physically Change Out NAB
+
+
+NAB Interface Configurations
+
+The following configuration options are supported for the network interfaces on the NAB:
+
+->Group the NAB ports into one or more LAGs. The number of LAGs possible for the network interfaces is limited by the number of Ethernet ports present (due to the fact that LAGs reuse MAC addresses allocated for Ethernet ports).
+->Assign independent IP addresses to each NAB port (that is, no LAG configured).
+->A mixture of both, that is, have some of the Ethernet ports grouped into a single LAG, and the remaining ports independently addressed.
