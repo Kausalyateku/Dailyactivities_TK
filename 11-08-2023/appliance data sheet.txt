@@ -1,0 +1,81 @@
+//appliance data sheet
+
+PubSub+ Event Broker Appliance
+
+-The “+” in pubsub+ means it supports a wide range of message exchange patterns including publish/subscribe, request/reply, queueing and streaming with qualities of service like best effort and guaranteed delivery.y. It’s available as an
+appliance, software, and a service, all of which offer the same functionality and can be managed and monitored with a single administration interface.
+
+Key Capabilities and Features:
+
+APIs & Protocols
+  • Support for AMQP(Advanced Message Queuing Protocol), JMS(Java Message Service), MQTT(Message Queuing Telemetry Transport), Node.js,Paho, Qpid, WebSocket and more
+  • Messaging APIs for C, C++, C#/.NET, Java,JavaScript, JMS/JCA and Node.js
+
+(Paho has one common association is with the Eclipse Paho project, which is an open-source implementation of MQTT (Message Queuing Telemetry Transport) protocols. It is provides client libraries in various programming languages that allow devices and applications to communicate using the MQTT protocol. These libraries make it easier to integrate MQTT-based communication into your software projects.)
+
+Security
+• Authentication, authorization and encryption of assets and information
+
+Advanced Messaging
+• Message caching and replay
+• topics, including wildcards
+• Message priority
+• Dead message queues
+• In-service upgrades
+
+Capacity & Performance
+• Very high throughput and low, consistent latency
+
+Management & Monitoring
+• Centralized administration.It is Powerful, proactive monitoring and alerting, including integration with existing monitoring tools
+
+Integration
+• It can easily integrate events from leading streaming and analytics products
+• It is Free open source Kafka connectors,for both sources and sinks.
+
+Appliance Models: 
+
+PubSub+ Event Broker is available as a turnkeyrack-mounted appliance that offers unparalleled performance and low TCO. Two types:
+
+3530 - It is the perfect fit for mid-sized businesses.
+3560 - It has what it takes to handle high volume big data, cloud and IoT requirements.
+
+for 3530:
+
+->I/O Cards - 4x1GE
+-> In Enterprise/JMS 3530 has 6,000 connections
+   In REST,IoT,Web 3530 has 6000 connections
+->For Non-PersistentMessaging Performance
+  Point to Point : 4.7M msgs/sec 
+  With Fan-out: 4.7M msgs/sec 
+  Throughput: 4 Gbps
+  Latency: 28 microseconds 
+-> Persistent Messaging Performance
+   Point to Point : 75,000 msgs/sec
+   With Fan-out: 450,000 msgs/sec 
+   Throughput : 1 Gbps
+
+for 3560:
+
+->I/O Cards - 2x10GE, 4x10GE,
+8x10GE
+-> In Enterprise/JMS 3530 has 30000 connections
+   In REST,IoT,Web 3530 has 200000 connections
+->For Non-PersistentMessaging Performance
+  Point to Point : 8.5M msgs/sec
+  With Fan-out:  28M msgs/sec
+  Throughput: 80Gbps
+  Latency: 18 microseconds
+-> Persistent Messaging Performance
+   Point to Point : 645,000 msgs/sec
+   With Fan-out: 6,000,000 msgs/sec
+   Throughput : 9.5 Gbps
+
+
+Enterprises Choose PubSub+ Appliances for performance ,availablity and for automated disaster recovery
+
+->Here in pubsub+ appliances they are purpose-builtwith high-speed FPGAs and network processors that eliminate the need for anOS and support massive throughput and extremely low, predictable latency
+->it also offer built-inredundancy with discrete data and control planes, field-serviceable power supplies and internal solid-state disks.
+->PubSub+ appliances can continuously replicate all messages to standby sites, complete with their states, queues, and configuration for very fast failover with no message loss. 
+
+Pubsub+ appliances customers - RBC Capital Markets,CargoSmart,Grasshopper,Airtel,jio,SAP
